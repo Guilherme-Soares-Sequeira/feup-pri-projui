@@ -4,7 +4,7 @@
 
     function submitSearch(event) {
         if (event.key === 'Enter' && search) {
-            window.location.href = "/newpage?query=" + encodeURIComponent(search);
+            window.location.href = "/query?query=" + encodeURIComponent(search);
         }
     }
 </script>

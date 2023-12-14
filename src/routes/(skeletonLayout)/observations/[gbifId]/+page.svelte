@@ -37,7 +37,8 @@
 		<h2>Country: { observation.country_code ? observation.country_code : 'Unknown'}</h2>
 		<h2>District: { observation.district ? observation.district : 'Unknown'}</h2>
 		<h2>County: { observation.county ? observation.county : 'Unknown'}</h2>
-        <h2>Date: { observation.date ? new Date(observation.date).toISOString().split('T')[0] : 'Unknown'} </h2>
+		<h2>Parish: { observation.parish ? observation.parish : 'Unknown'}</h2>
+		<h2>Date: { observation.date ? new Date(observation.date).toISOString().split('T')[0] : 'Unknown'} </h2>
 		<h2>Latitude: { observation.latitude ? observation.latitude : 'Unknown'}</h2>
 		<h2>Longitude: { observation.longitude ? observation.longitude : 'Unknown'}</h2>
 
