@@ -18,7 +18,7 @@
 			class="w-10/12 snap-x snap-mandatory scroll-smooth overflow-y-hidden flex gap-2 p-y-1 overflow-x-scroll"
 		>
 			{#each images as image}
-				<a href="/gallery/{image.gbif_id.toString()}" class="card card-hover p-3">
+				<a href="/gallery/{image.index.toString()}" class="card card-hover p-3 max-w-md">
 					<div class="card-header w-full p-0">
 						<img src={image.identifier} alt="by: {image.rightsholder}" />
 						<div class="card p-2 variant-glass-primary text-xs flex flex-col">

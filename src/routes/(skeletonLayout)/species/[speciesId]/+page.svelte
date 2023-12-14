@@ -15,7 +15,7 @@
 		>
 			{#each data.images as image}
 				<a href="/observations/{image.gbif_id.toString()}" class="card card-hover p-3">
-					<div class="card-header w-full p-0">
+					<div class="card-header w-full max-w-md p-0">
 						<img src={image.identifier} alt="by: {image.rightsholder}" />
 						<div class="card p-2 variant-glass-primary text-xs flex flex-col">
 							<h2 class="font-bold text-center">{species}</h2>

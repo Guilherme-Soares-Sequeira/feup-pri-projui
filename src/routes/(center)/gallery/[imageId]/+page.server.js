@@ -5,8 +5,10 @@ import SolrQueryBuilder from 'solr-query-builder';
 
 export async function load({ params }) {
     const imageClient = createClient({ host: 'localhost', core: 'images', port: '8983' });
+    
+    const queryQ = new SolrQueryBuilder().where('index').equals(params.imageId.toString());
 
-    const imageQuery = new Query().q(`index:${params.imageId}`);
+    const imageQuery = new Query().q(queryQ.build());
 
     const imageResult = (await imageClient.search(imageQuery, function (err, _) {
         if (err) {
