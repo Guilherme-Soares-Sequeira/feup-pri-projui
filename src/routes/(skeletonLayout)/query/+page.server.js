@@ -108,7 +108,7 @@ export async function load({ url }) {
         }
     
     
-        return resolve(speciesResult.docs);
+        return resolve(res);
     })
 
     const observations = new Promise(async (resolve, reject) => {
