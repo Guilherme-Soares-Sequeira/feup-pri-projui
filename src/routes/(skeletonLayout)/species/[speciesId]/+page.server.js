@@ -98,7 +98,6 @@ export async function load({ params }) {
     }
 
     result['images'] = images.length > 0 ? images : null;
-    console.log("hey")
 
     return result;
 }
