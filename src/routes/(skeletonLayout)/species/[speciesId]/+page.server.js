@@ -21,8 +21,8 @@ export async function load({ params }) {
     const speciesClient = createClient({ host: 'localhost', core: 'species', port: '8983' });
     const imagesClient = createClient({ host: 'localhost', core: 'images', port: '8983' });
     const observationsClient = createClient({ host: 'localhost', core: 'observations', port: '8983' });
-    const summariesClient = createClient({ host: 'localhost', core: 'species', port: '8983' });
-    const abstractsClient = createClient({ host: 'localhost', core: 'species', port: '8983' });
+    const summariesClient = createClient({ host: 'localhost', core: 'summaries', port: '8983' });
+    const abstractsClient = createClient({ host: 'localhost', core: 'abstracts', port: '8983' });
 
 
     // species
@@ -42,7 +42,6 @@ export async function load({ params }) {
         throw error(404, "No species found with that ID")
     }
     const speciesObject = speciesResult.docs[0];
-
     result['species'] = speciesObject;
 
     const speciesName = speciesObject.species;
@@ -87,7 +86,7 @@ export async function load({ params }) {
     let images = [];
 
     for (let i = 0; i < gbifIdList.length; i++) {
-        const gbifId =  gbifIdList[i].toString();
+        const gbifId = gbifIdList[i].toString();
         const query = new SolrQueryBuilder().where('gbif_id').equals(gbifId.toString());
         const imagesQuery = new Query().q(query.build()).rows(100);
 
@@ -99,6 +98,7 @@ export async function load({ params }) {
     }
 
     result['images'] = images.length > 0 ? images : null;
+    console.log("hey")
 
     return result;
 }
