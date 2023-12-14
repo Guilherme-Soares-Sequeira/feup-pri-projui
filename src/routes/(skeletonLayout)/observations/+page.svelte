@@ -10,9 +10,9 @@
 		{#if images[observation.gbif_id.toString()]}
 			<a
 				href="/observations/{observation.gbif_id.toString()}"
-				class="card card-hover variant-filled-primary min-w-fit flex-col justify-center items-center pb-3"
+				class="card card-hover variant-filled-primary max-w-xs min-w-fit flex-col justify-center items-center pb-3"
 			>
-				<img src={images[observation.gbif_id.toString()]} alt={observation.species} class="w-96 mb-3" />
+				<img src={images[observation.gbif_id.toString()]} alt={observation.species} class="mb-3 w-96" />
 				<h2 class="text-center my-auto">
 					Species: {observation.species}
 				</h2>
